@@ -1,0 +1,30 @@
+{
+    {
+        "id": "1111111",
+        "username": "rizkyramdhan",
+        "password": "rizkyganteng117",
+        "role": "Siswa",
+        "nama": "Rizky Ramdhan Nugraha"
+    },
+    {
+        "id": "34567",
+        "username": "firmanpanji",
+        "password": "lukaku000",
+        "role": "Guru",
+        "nama": "Firman Panji Utama"
+    },
+    {
+        "id": "09876",
+        "username": "qalbunsaliim",
+        "password": "qwerty123",
+        "role": "Wakil Kepala Sekolah",
+        "nama": "Muhammad Qalbun Saliim"
+    },
+    {
+        "id": "12345",
+        "username": "radenrafi",
+        "password": "abcde123",
+        "role": "Tim IT",
+        "nama": "Raden Rafi Alif Akbar"
+    }
+}
