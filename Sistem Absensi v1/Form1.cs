@@ -16,5 +16,9 @@ namespace Sistem_Absensi_v1
         {
             InitializeComponent();
         }
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
