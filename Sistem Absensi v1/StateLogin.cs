@@ -1,16 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Sistem_Absensi_v1
 {
-    public class StateLogin
+    internal class StateLogin
     {
         public enum State { Online, Offline };
         public enum Trigger { Login, Logout };
-        public State currentState = State.Online;
+
+        public State currentState = State.Offline;
         public class Transition
         {
             public State prevState, nextState;
@@ -23,10 +20,11 @@ namespace Sistem_Absensi_v1
                 this.trigger = trigger;
             }
         }
+
         Transition[] Posisi =
         {
             new Transition(State.Offline, State.Online, Trigger.Login),
-            new Transition(State.Online, State.Offline, Trigger.Logout),
+            new Transition(State.Online, State.Offline, Trigger.Logout)
         };
 
         public State GetNextState(State prev, Trigger trigger)
@@ -57,6 +55,3 @@ namespace Sistem_Absensi_v1
         }
     }
 }
-
-
-
