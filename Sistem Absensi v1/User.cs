@@ -19,6 +19,11 @@ namespace Sistem_Absensi_v1
         {
             this.user = user;
         }
+        public static void Login<T>(T username, T password)
+        {
+            dynamic user = username;
+            dynamic pass = password;
+        }
 
     }
 
