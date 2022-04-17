@@ -23,6 +23,21 @@ namespace Sistem_Absensi_v1
         {
             dynamic user = username;
             dynamic pass = password;
+            
+            UserConfig config = new UserConfig();
+            //int panjang = config.uConf.user.Count;
+            foreach (var item in config.uConf.user)
+            {
+                if(user == item.username && pass == item.password)
+                {
+                    MainSiswa mainSiswa = new MainSiswa();
+                    Form1 form1 = new Form1();
+
+                    form1.Hide();
+                    mainSiswa.ShowDialog();
+                    form1.Close();
+                }
+            }
         }
 
     }
