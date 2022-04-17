@@ -17,5 +17,6 @@ namespace Sistem_Absensi_v1
         {
             InitializeComponent();
         }
+
     }
 }
