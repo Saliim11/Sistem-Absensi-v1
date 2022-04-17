@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -45,6 +46,8 @@ namespace Sistem_Absensi_v1
             username = input_Username.Text;
             password = input_Password.Text;
             User.Login<String>(username, password);
+
+            Debug.Assert(password.Length >= 8, "Panjang password harus melebihi 8 karakter");
         }
     }
 }

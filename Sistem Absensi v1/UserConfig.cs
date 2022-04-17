@@ -14,7 +14,16 @@ namespace Sistem_Absensi_v1
 
         public UserConfig()
         {
-            ReadJSON();
+            try
+            {
+                ReadJSON();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Terjadi error: " + e);
+                //throw;
+            }
+            
         }
         public User ReadJSON()
         {
