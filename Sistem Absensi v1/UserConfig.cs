@@ -11,28 +11,27 @@ namespace Sistem_Absensi_v1
     internal class UserConfig
     {
         public User uConf;
+        public string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+        public string fileConfig = "users.json";
 
         public UserConfig()
         {
             try
             {
-                ReadJSON();
+                ReadConfigFile();
             }
             catch (Exception e)
             {
-                Console.WriteLine("Terjadi error: " + e);
-                //throw;
+                throw;
             }
-            
         }
-        public User ReadJSON()
+
+        private User ReadConfigFile()
         {
-            string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
-            string jsonString = File.ReadAllText(path + "/users.json");
-
-            User printUser = JsonConvert.DeserializeObject<User>(jsonString);
-
-            return printUser;
+            string jsonStringFromFile = File.ReadAllText(path + "/" + fileConfig);
+            uConf = JsonConvert.DeserializeObject<User>(jsonStringFromFile);
+            return uConf;
         }
+
     }
 }

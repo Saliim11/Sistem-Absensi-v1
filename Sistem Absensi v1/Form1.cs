@@ -14,6 +14,8 @@ namespace Sistem_Absensi_v1
     public partial class Form1 : Form
     {
         StateLogin stateLogin = new StateLogin();
+        UserConfig config = new UserConfig();
+
         string username;
         string password;
 
@@ -51,11 +53,62 @@ namespace Sistem_Absensi_v1
         {
             username = input_Username.Text;
             password = input_Password.Text;
-            User.Login<String>(username, password);
-
             Debug.Assert(password.Length >= 8, "Panjang password harus melebihi 8 karakter");
+
+            FuncLogin<String>(username, password);
+            
         }
 
-        
+        public void FuncLogin<T>(T username, T password)
+        {
+            dynamic user = username;
+            dynamic pass = password;
+
+            foreach (var item in config.uConf.user)
+            {
+                if (user == item.username && pass == item.password)
+                {
+                    stateLogin.activeTrigger(StateLogin.Trigger.Login);
+                    Debug.WriteLine(stateLogin.currentState);
+
+                    switch (item.role)
+                    {
+                        case "Siswa":
+                            MainSiswa mainSiswa = new MainSiswa();
+                            this.Hide();
+                            mainSiswa.ShowDialog();
+                            this.Close();
+                            break;
+                        case "Guru":
+                            MainGuru mainGuru = new MainGuru();
+                            this.Hide();
+                            mainGuru.ShowDialog();
+                            this.Close();
+                            break;
+                        case "Wakil Kepala Sekolah":
+                            MainWakasek mainWakasek = new MainWakasek();
+                            this.Hide();
+                            mainWakasek.ShowDialog();
+                            this.Close();
+                            break;
+                        case "Tim IT":
+                            MainTimIT mainTimIT = new MainTimIT();
+                            this.Hide();
+                            mainTimIT.ShowDialog();
+                            this.Close();
+                            break;
+                    }
+
+                    break;
+                }
+            }
+            if(stateLogin.currentState == StateLogin.State.Offline)
+            {
+                MessageBox.Show("username/password salah!!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            
+        }
+
+
     }
 }

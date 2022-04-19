@@ -87,11 +87,29 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainGuru.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainGuru.Designer.cs">
+      <DependentUpon>MainGuru.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainSiswa.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainSiswa.Designer.cs">
       <DependentUpon>MainSiswa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainTimIT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainTimIT.Designer.cs">
+      <DependentUpon>MainTimIT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainWakasek.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWakasek.Designer.cs">
+      <DependentUpon>MainWakasek.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -101,8 +119,17 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MainGuru.resx">
+      <DependentUpon>MainGuru.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainSiswa.resx">
       <DependentUpon>MainSiswa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainTimIT.resx">
+      <DependentUpon>MainTimIT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWakasek.resx">
+      <DependentUpon>MainWakasek.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
