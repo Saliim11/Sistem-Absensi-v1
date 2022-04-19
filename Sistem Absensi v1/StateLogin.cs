@@ -2,12 +2,12 @@
 
 namespace Sistem_Absensi_v1
 {
-    internal class StateLogin
+    internal static class StateLogin
     {
         public enum State { Online, Offline };
         public enum Trigger { Login, Logout };
 
-        public State currentState = State.Offline;
+        public static State currentState = State.Offline;
         public class Transition
         {
             public State prevState, nextState;
@@ -21,13 +21,13 @@ namespace Sistem_Absensi_v1
             }
         }
 
-        Transition[] Posisi =
+        static Transition[] Posisi =
         {
             new Transition(State.Offline, State.Online, Trigger.Login),
             new Transition(State.Online, State.Offline, Trigger.Logout)
         };
 
-        public State GetNextState(State prev, Trigger trigger)
+        public static State GetNextState(State prev, Trigger trigger)
         {
             State currentState = prev;
             for (int i = 0; i < Posisi.Length; i++)
@@ -39,7 +39,7 @@ namespace Sistem_Absensi_v1
             }
             return currentState;
         }
-        public void activeTrigger(Trigger trigger)
+        public static void activeTrigger(Trigger trigger)
         {
             State nextState = GetNextState(currentState, trigger);
             currentState = nextState;
