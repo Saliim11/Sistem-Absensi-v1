@@ -32,5 +32,18 @@ namespace Sistem_Absensi_v1
             new Transition(State.Keluar, State.Masuk, Trigger.Login),
             new Transition(State.Masuk, State.Keluar, Trigger.Logout)
         };
+
+        public static State GetNextState(State prev, Trigger trigger)
+        {
+            State currentState = prev;
+            for (int i = 0; i < Posisi.Length; i++)
+            {
+                if (Posisi[i].prevState == prev && Posisi[i].trigger == trigger)
+                {
+                    currentState = Posisi[i].nextState;
+                }
+            }
+            return currentState;
+        }
     }
 }
