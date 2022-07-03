@@ -38,6 +38,7 @@
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnSwitchLogin = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label2
@@ -135,11 +136,22 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btnSwitchLogin
+            // 
+            this.btnSwitchLogin.Location = new System.Drawing.Point(449, 292);
+            this.btnSwitchLogin.Name = "btnSwitchLogin";
+            this.btnSwitchLogin.Size = new System.Drawing.Size(75, 23);
+            this.btnSwitchLogin.TabIndex = 11;
+            this.btnSwitchLogin.Text = "Login";
+            this.btnSwitchLogin.UseVisualStyleBackColor = true;
+            this.btnSwitchLogin.Click += new System.EventHandler(this.button2_Click_1);
+            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(536, 327);
+            this.Controls.Add(this.btnSwitchLogin);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.radioButton2);
@@ -170,5 +182,6 @@
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSwitchLogin;
     }
 }

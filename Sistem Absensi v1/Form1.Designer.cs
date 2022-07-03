@@ -34,6 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.input_Password = new System.Windows.Forms.TextBox();
             this.input_Username = new System.Windows.Forms.TextBox();
+            this.btnSwitchRegister = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Login
@@ -93,9 +94,20 @@
             this.input_Username.TabIndex = 6;
             this.input_Username.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
+            // btnSwitchRegister
+            // 
+            this.btnSwitchRegister.Location = new System.Drawing.Point(753, 370);
+            this.btnSwitchRegister.Name = "btnSwitchRegister";
+            this.btnSwitchRegister.Size = new System.Drawing.Size(75, 23);
+            this.btnSwitchRegister.TabIndex = 12;
+            this.btnSwitchRegister.Text = "Register";
+            this.btnSwitchRegister.UseVisualStyleBackColor = true;
+            this.btnSwitchRegister.Click += new System.EventHandler(this.btnSwitchRegister_Click);
+            // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(846, 412);
+            this.Controls.Add(this.btnSwitchRegister);
             this.Controls.Add(this.Login);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -117,6 +129,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox input_Password;
         private System.Windows.Forms.TextBox input_Username;
+        private System.Windows.Forms.Button btnSwitchRegister;
     }
 }
 
