@@ -8,35 +8,29 @@ namespace sistem_absensi.Controllers
     [ApiController]
     public class GuruController : ControllerBase
     {
-        private static List<Guru> guruList = new List<Guru>() {
+        private static List<User> guruList = new List<User>() {
             new Guru("34567" ,"firmanpanji", "lukaku000", "Guru", "Firman Panji Utama"),
             new Guru("09876" ,"qalbunsaliim", "qwerty123", "Wakil Kepala Sekolah", "Muhammad Qalbun Saliim")
         };
         // GET: api/<ValuesController>
         [HttpGet]
-        public IEnumerable<Guru> Get()
+        public IEnumerable<User> Get()
         {
             return guruList;
         }
 
         // GET api/<ValuesController>/5
         [HttpGet("{id}")]
-        public Guru Get(int id)
+        public User Get(int id)
         {
             return guruList[id];
         }
 
         // POST api/<ValuesController>
         [HttpPost]
-        public void Post([FromBody] Guru value)
+        public void Post([FromBody] User value)
         {
             guruList.Add(value);
-        }
-
-        // PUT api/<ValuesController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
         }
 
         // DELETE api/<ValuesController>/5

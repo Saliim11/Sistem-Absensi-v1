@@ -1,7 +1,7 @@
 ﻿using System;
 namespace sistem_absensi
 {
-    public class Siswa
+    public class User
     {
         public string id { get; set; }
         public string username { get; set; }
@@ -9,7 +9,7 @@ namespace sistem_absensi
         public string role { get; set; }
         public string nama { get; set; }
     
-        public Siswa(string id, string username, string password, string role, string nama)
+        public User(string id, string username, string password, string role, string nama)
         {
             this.id = id;
             this.username = username;
