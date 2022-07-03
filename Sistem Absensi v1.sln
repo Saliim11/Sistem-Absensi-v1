@@ -7,10 +7,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sistem Absensi v1", "Sistem
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sistem Absensi API", "Sistem Absensi API\Sistem Absensi API.csproj", "{8CFF44FE-E99C-4640-A0B2-0AE2CD691E93}"
 EndProject
+
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTesRADENRAFI", "UnitTesRADENRAFI\UnitTesRADENRAFI.csproj", "{952B0BE7-DCE4-4227-B1D7-7B68A1BCEC8F}"
+
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestHazim", "UnitTestHazim\UnitTestHazim.csproj", "{035B415D-77B1-40F9-8E53-2D15B121A57C}"
 	ProjectSection(ProjectDependencies) = postProject
 		{CE27022A-3CF3-4CCB-9615-64CF024FEE91} = {CE27022A-3CF3-4CCB-9615-64CF024FEE91}
 	EndProjectSection
+
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,10 +30,17 @@ Global
 		{8CFF44FE-E99C-4640-A0B2-0AE2CD691E93}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8CFF44FE-E99C-4640-A0B2-0AE2CD691E93}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8CFF44FE-E99C-4640-A0B2-0AE2CD691E93}.Release|Any CPU.Build.0 = Release|Any CPU
+
+		{952B0BE7-DCE4-4227-B1D7-7B68A1BCEC8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{952B0BE7-DCE4-4227-B1D7-7B68A1BCEC8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{952B0BE7-DCE4-4227-B1D7-7B68A1BCEC8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{952B0BE7-DCE4-4227-B1D7-7B68A1BCEC8F}.Release|Any CPU.Build.0 = Release|Any CPU
+
 		{035B415D-77B1-40F9-8E53-2D15B121A57C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{035B415D-77B1-40F9-8E53-2D15B121A57C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{035B415D-77B1-40F9-8E53-2D15B121A57C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{035B415D-77B1-40F9-8E53-2D15B121A57C}.Release|Any CPU.Build.0 = Release|Any CPU
+
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
