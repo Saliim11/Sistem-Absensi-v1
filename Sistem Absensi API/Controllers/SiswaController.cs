@@ -37,12 +37,24 @@ namespace sistem_absensi.Controllers
             }
         }
 
+        // PUT api/<ValuesController>/5
+        [HttpPut("Update data Siswa")]
+        public void Put(int id, [FromBody] User value)
+        {
+            siswaList[id].id = value.id;
+            siswaList[id].username = value.username;
+            siswaList[id].password = value.password;
+            siswaList[id].role = value.role;
+            siswaList[id].nama = value.nama;
+        }
+
         // DELETE api/<ValuesController>/5
         [HttpDelete(" Delete data Siswa")]
         public void Delete(int id)
         {
             siswaList.RemoveAt(id); 
         }
+
         public static bool cekPassword(string password)
         {
             if (password.Length <= 8)

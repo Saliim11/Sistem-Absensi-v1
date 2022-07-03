@@ -39,15 +39,13 @@ namespace sistem_absensi.Controllers
 
         // PUT api/<ValuesController>/5
         [HttpPut("Update data Guru")]
-        public void Put(int id, [FromBody] string value)
+        public void Put(int id, [FromBody] User value)
         {
-            guruList[id].id = value;
-            guruList[id].username = value;
-            guruList[id].password = value;
-            guruList[id].password = value;
-            guruList[id].role = value;
-            guruList[id].nama = value;
-
+            guruList[id].id = value.id;
+            guruList[id].username = value.username;
+            guruList[id].password = value.password;
+            guruList[id].role = value.role;
+            guruList[id].nama = value.nama;
         }
 
         // DELETE api/<ValuesController>/5
