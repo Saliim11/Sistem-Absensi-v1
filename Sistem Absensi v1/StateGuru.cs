@@ -13,5 +13,18 @@ namespace Sistem_Absensi_v1
         public enum Trigger {Login, Logout}
 
         public static State currentState = State.Keluar;
+
+        public class Transition
+        {
+            public State prevState, nextState;
+            public Trigger trigger;
+
+            public Transition(State prevState, State nextState, Trigger trigger)
+            {
+                this.prevState = prevState;
+                this.nextState = nextState;
+                this.trigger = trigger;
+            }
+        }
     }
 }
