@@ -14,29 +14,24 @@ namespace UnitTestHazim
         [TestMethod]
         public void TestStateAwal()
         {
-            StateGuru TestStateGuru = new StateGuru();
-
-            Assert.AreEqual(TestStateGuru.currentState, StateGuru.State.Keluar);
+            Assert.AreEqual(StateGuru.currentState, StateGuru.State.Keluar);
         }
 
         [TestMethod]
         public void TestKeluarToMasuk()
         {
-            StateGuru TestStateGuru = new StateGuru();
+            StateGuru.ActiveTrigger(StateGuru.Trigger.Check_in);
 
-            TestStateGuru.ActiveTrigger(StateGuru.Trigger.Login);
-            Assert.AreEqual(TestStateGuru.currentState, StateGuru.State.Masuk);
+            Assert.AreEqual(StateGuru.currentState, StateGuru.State.Masuk);
         }
 
         [TestMethod]
         public void TestMasukToKeluar()
         {
-            StateGuru TestStateGuru = new StateGuru();
+            StateGuru.ActiveTrigger(StateGuru.Trigger.Check_in);
+            StateGuru.ActiveTrigger(StateGuru.Trigger.Check_out);
 
-            TestStateGuru.ActiveTrigger(StateGuru.Trigger.Login);
-            TestStateGuru.ActiveTrigger(StateGuru.Trigger.Logout);
-
-            Assert.AreEqual(TestStateGuru.currentState, StateGuru.State.Keluar);
+            Assert.AreEqual(StateGuru.currentState, StateGuru.State.Keluar);
         }
     }
 }
