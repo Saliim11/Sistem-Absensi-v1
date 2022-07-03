@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Sistem_Absensi_v1
 {
-    internal class StateGuru
+    public class StateGuru
     {
+        public enum State {Masuk, Keluar}
+
+        public enum Trigger {Login, Logout}
+
+        public static State currentState = State.Keluar;
     }
 }
