@@ -22,7 +22,8 @@ namespace Sistem_Absensi_v1
             }
             catch (Exception e)
             {
-                throw;
+                //throw;
+                Console.WriteLine("File tidak ditemukan! \n" + e);
             }
         }
 
