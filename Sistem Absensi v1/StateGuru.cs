@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Sistem_Absensi_v1
 {
-    public class StateGuru
+    public static class StateGuru
     {
         public enum State {Masuk, Keluar}
 
-        public enum Trigger {Login, Logout}
+        public enum Trigger {Check_in, Check_out}
 
         public static State currentState = State.Keluar;
 
@@ -29,8 +29,8 @@ namespace Sistem_Absensi_v1
 
         static Transition[] Posisi =
         {
-            new Transition(State.Keluar, State.Masuk, Trigger.Login),
-            new Transition(State.Masuk, State.Keluar, Trigger.Logout)
+            new Transition(State.Keluar, State.Masuk, Trigger.Check_in),
+            new Transition(State.Masuk, State.Keluar, Trigger.Check_out)
         };
 
         public static State GetNextState(State prev, Trigger trigger)
@@ -53,11 +53,11 @@ namespace Sistem_Absensi_v1
 
             if (currentState == State.Masuk)
             {
-                Console.WriteLine("Login");
+                Console.WriteLine("Check In");
             }
             else if (currentState == State.Keluar)
             {
-                Console.WriteLine("Logout");
+                Console.WriteLine("Check Out");
             }
         }
     }
