@@ -31,7 +31,10 @@ namespace sistem_absensi.Controllers
         [HttpPost]
         public void Post([FromBody] User value)
         {
-            siswaList.Add(value);
+            if (cekPassword(value.password))
+            {
+                siswaList.Add(value);
+            }
         }
 
         // DELETE api/<ValuesController>/5
@@ -39,6 +42,17 @@ namespace sistem_absensi.Controllers
         public void Delete(int id)
         {
             siswaList.RemoveAt(id); 
+        }
+        public static bool cekPassword(string password)
+        {
+            if (password.Length <= 8)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

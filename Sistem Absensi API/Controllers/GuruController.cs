@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -30,7 +31,17 @@ namespace sistem_absensi.Controllers
         [HttpPost]
         public void Post([FromBody] User value)
         {
-            guruList.Add(value);
+            if (cekPassword(value.password)) 
+            {
+                guruList.Add(value);
+            }
+        }
+
+        // PUT api/<ValuesController>/5
+        [HttpPut("{id}")]
+        public void Put(int id, [FromBody] string value)
+        {
+
         }
 
         // DELETE api/<ValuesController>/5
@@ -38,6 +49,18 @@ namespace sistem_absensi.Controllers
         public void Delete(int id)
         {
             guruList.RemoveAt(id);
+        }
+
+        public static bool cekPassword(string password) 
+        {
+            if (password.Length <= 8)
+            {
+                return true;
+            }
+            else 
+            {
+                return false;
+            }
         }
     }
 }
