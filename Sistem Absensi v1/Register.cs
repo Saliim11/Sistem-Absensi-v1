@@ -22,7 +22,40 @@ namespace Sistem_Absensi_v1
 
         }
 
-        
+        public string getNama()
+        {
+            return textBox1.Text;
+        }
+
+        public string getUsername()
+        {
+            return textBox2.Text;
+        }
+
+        public string getPassword()
+        {
+            return textBox3.Text;
+        }
+
+        public string getRole()
+        {
+            if (radioButton1.Checked == true)
+            {
+                return radioButton1.Text;
+            }
+            else
+            {
+                return radioButton2.Text;
+            }
+        }
+
+        public string getId()
+        {
+            Random rand = new Random();
+            int x = rand.Next(100000, 900000);
+            return x.ToString();
+        }
+
 
         private void button2_Click(object sender, EventArgs e)
         {
