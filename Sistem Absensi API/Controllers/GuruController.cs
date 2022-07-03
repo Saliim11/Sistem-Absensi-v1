@@ -6,32 +6,31 @@ namespace sistem_absensi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class SiswaController : ControllerBase
+    public class GuruController : ControllerBase
     {
-        private static List<Siswa> siswaList = new List<Siswa>() {
-            new Siswa("12345", "radenrafi", "abcde123","Tim IT","Raden Rafi Alif Akbar"),
-            new Siswa("1111111", "rizkyramdhan", "rizkyganteng117","Siswa","Rizky Ramdhan Nugraha")
+        private static List<Guru> guruList = new List<Guru>() {
+            new Guru("34567" ,"firmanpanji", "lukaku000", "Guru", "Firman Panji Utama"),
+            new Guru("09876" ,"qalbunsaliim", "qwerty123", "Wakil Kepala Sekolah", "Muhammad Qalbun Saliim")
         };
-
-        // GET: api/<SiswaController>
+        // GET: api/<ValuesController>
         [HttpGet]
-        public IEnumerable<Siswa> Get()
+        public IEnumerable<Guru> Get()
         {
-            return siswaList;
+            return guruList;
         }
 
         // GET api/<ValuesController>/5
         [HttpGet("{id}")]
-        public Siswa Get(int id)
+        public Guru Get(int id)
         {
-            return siswaList[id];
+            return guruList[id];
         }
 
         // POST api/<ValuesController>
         [HttpPost]
-        public void Post([FromBody] Siswa value)
+        public void Post([FromBody] Guru value)
         {
-            siswaList.Add(value);
+            guruList.Add(value);
         }
 
         // PUT api/<ValuesController>/5
@@ -44,7 +43,7 @@ namespace sistem_absensi.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            siswaList.RemoveAt(id); 
+            guruList.RemoveAt(id);
         }
     }
 }
