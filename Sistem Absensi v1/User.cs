@@ -13,7 +13,7 @@ namespace Sistem_Absensi_v1
     {
         public List<users> user { get; set; }
 
-        public User() { }
+        //public User() { }
 
         public User(List<users> user)
         {

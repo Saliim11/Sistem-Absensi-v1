@@ -122,6 +122,17 @@ namespace Sistem_Absensi_v1
             
         }
 
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            
 
+        }
+
+        private void btnSwitchRegister_Click(object sender, EventArgs e)
+        {
+            Register register = new Register();
+            register.Show();
+            this.Hide();
+        }
     }
 }
