@@ -15,6 +15,7 @@ namespace UnitTestHazim
         public void TestStateAwal()
         {
             StateGuru TestStateGuru = new StateGuru();
+
             Assert.AreEqual(TestStateGuru.currentState, StateGuru.State.Keluar);
         }
 
@@ -22,6 +23,7 @@ namespace UnitTestHazim
         public void TestKeluarToMasuk()
         {
             StateGuru TestStateGuru = new StateGuru();
+
             TestStateGuru.ActiveTrigger(StateGuru.Trigger.Login);
             Assert.AreEqual(TestStateGuru.currentState, StateGuru.State.Masuk);
         }
@@ -30,8 +32,10 @@ namespace UnitTestHazim
         public void TestMasukToKeluar()
         {
             StateGuru TestStateGuru = new StateGuru();
+
             TestStateGuru.ActiveTrigger(StateGuru.Trigger.Login);
             TestStateGuru.ActiveTrigger(StateGuru.Trigger.Logout);
+
             Assert.AreEqual(TestStateGuru.currentState, StateGuru.State.Keluar);
         }
     }
