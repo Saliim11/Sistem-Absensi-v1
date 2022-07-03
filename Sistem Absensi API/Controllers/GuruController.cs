@@ -9,8 +9,8 @@ namespace sistem_absensi.Controllers
     public class GuruController : ControllerBase
     {
         private static List<User> guruList = new List<User>() {
-            new Guru("34567" ,"firmanpanji", "lukaku000", "Guru", "Firman Panji Utama"),
-            new Guru("09876" ,"qalbunsaliim", "qwerty123", "Wakil Kepala Sekolah", "Muhammad Qalbun Saliim")
+            new User("34567" ,"firmanpanji", "lukaku000", "Guru", "Firman Panji Utama"),
+            new User("09876" ,"qalbunsaliim", "qwerty123", "Wakil Kepala Sekolah", "Muhammad Qalbun Saliim")
         };
         // GET: api/<ValuesController>
         [HttpGet]
