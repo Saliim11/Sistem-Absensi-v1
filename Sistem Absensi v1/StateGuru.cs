@@ -45,5 +45,20 @@ namespace Sistem_Absensi_v1
             }
             return currentState;
         }
+
+        public static void ActiveTrigger(Trigger trigger)
+        {
+            State nextState = GetNextState(currentState, trigger);
+            currentState = nextState;
+
+            if (currentState == State.Masuk)
+            {
+                Console.WriteLine("Login");
+            }
+            else if (currentState == State.Keluar)
+            {
+                Console.WriteLine("Logout");
+            }
+        }
     }
 }
