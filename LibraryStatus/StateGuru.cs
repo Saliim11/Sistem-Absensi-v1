@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sistem_Absensi_v1
+namespace LibraryStatus
 {
-    public static class StateGuru
+    internal class StateGuru
     {
-        public enum State {Masuk, Keluar}
+        public enum State { Masuk, Keluar }
 
-        public enum Trigger {Check_in, Check_out}
+        public enum Trigger { Check_in, Check_out }
 
         public static State currentState = State.Keluar;
 

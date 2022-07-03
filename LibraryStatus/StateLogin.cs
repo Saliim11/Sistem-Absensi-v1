@@ -1,19 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Sistem_Absensi_v1
+﻿namespace LibraryStatus
 {
-    public static class StateGuru
+    public class StateLogin
     {
-        public enum State {Masuk, Keluar}
+        public enum State { Online, Offline };
+        public enum Trigger { Login, Logout };
 
-        public enum Trigger {Check_in, Check_out}
-
-        public static State currentState = State.Keluar;
-
+        public static State currentState = State.Offline;
         public class Transition
         {
             public State prevState, nextState;
@@ -29,8 +21,8 @@ namespace Sistem_Absensi_v1
 
         static Transition[] Posisi =
         {
-            new Transition(State.Keluar, State.Masuk, Trigger.Check_in),
-            new Transition(State.Masuk, State.Keluar, Trigger.Check_out)
+            new Transition(State.Offline, State.Online, Trigger.Login),
+            new Transition(State.Online, State.Offline, Trigger.Logout)
         };
 
         public static State GetNextState(State prev, Trigger trigger)
@@ -45,19 +37,18 @@ namespace Sistem_Absensi_v1
             }
             return currentState;
         }
-
-        public static void ActiveTrigger(Trigger trigger)
+        public static void activeTrigger(Trigger trigger)
         {
             State nextState = GetNextState(currentState, trigger);
             currentState = nextState;
 
-            if (currentState == State.Masuk)
+            if (currentState == State.Online)
             {
-                Console.WriteLine("Check In");
+                Console.WriteLine("Login");
             }
-            else if (currentState == State.Keluar)
+            else if (currentState == State.Offline)
             {
-                Console.WriteLine("Check Out");
+                Console.WriteLine("Logout");
             }
         }
     }

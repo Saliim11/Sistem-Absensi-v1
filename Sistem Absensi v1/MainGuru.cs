@@ -37,5 +37,23 @@ namespace Sistem_Absensi_v1
         {
             lbl_welcome.Text = "Hai, Pak " + namaUser;
         }
+
+        private void check_in_Click(object sender, EventArgs e)
+        {
+            StateGuru.ActiveTrigger(StateGuru.Trigger.Check_in);
+            Debug.WriteLine("kondisi setelah check in: " + StateGuru.currentState);
+            
+            check_in.Visible = false;
+            check_out.Visible = true;
+        }
+
+        private void check_out_Click(object sender, EventArgs e)
+        {
+            StateGuru.ActiveTrigger(StateGuru.Trigger.Check_out);
+            Debug.WriteLine("kondisi setelah check out: " + StateGuru.currentState);
+
+            check_in.Visible = true;
+            check_out.Visible = false;
+        }
     }
 }
