@@ -14,38 +14,44 @@ namespace sistem_absensi.Controllers
             new User("09876" ,"qalbunsaliim", "qwerty123", "Wakil Kepala Sekolah", "Muhammad Qalbun Saliim")
         };
         // GET: api/<ValuesController>
-        [HttpGet]
+        [HttpGet(" Ambil data Guru")]
         public IEnumerable<User> Get()
         {
             return guruList;
         }
 
         // GET api/<ValuesController>/5
-        [HttpGet("{id}")]
+        [HttpGet(" Ambil data Guru by id")]
         public User Get(int id)
         {
             return guruList[id];
         }
 
         // POST api/<ValuesController>
-        [HttpPost]
+        [HttpPost(" Simpan data Guru")]
         public void Post([FromBody] User value)
         {
-            if (cekPassword(value.password)) 
+            if (cekPassword(value.password))
             {
                 guruList.Add(value);
             }
         }
 
         // PUT api/<ValuesController>/5
-        [HttpPut("{id}")]
+        [HttpPut("Update data Guru")]
         public void Put(int id, [FromBody] string value)
         {
+            guruList[id].id = value;
+            guruList[id].username = value;
+            guruList[id].password = value;
+            guruList[id].password = value;
+            guruList[id].role = value;
+            guruList[id].nama = value;
 
         }
 
         // DELETE api/<ValuesController>/5
-        [HttpDelete("{id}")]
+        [HttpDelete(" Delete data Guru")]
         public void Delete(int id)
         {
             guruList.RemoveAt(id);

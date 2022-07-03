@@ -14,21 +14,21 @@ namespace sistem_absensi.Controllers
         };
 
         // GET: api/<SiswaController>
-        [HttpGet]
+        [HttpGet(" Ambil data Siswa")]
         public IEnumerable<User> Get()
         {
             return siswaList;
         }
 
         // GET api/<ValuesController>/5
-        [HttpGet("{id}")]
+        [HttpGet(" Ambil data Siswa by id")]
         public User Get(int id)
         {
             return siswaList[id];
         }
 
         // POST api/<ValuesController>
-        [HttpPost]
+        [HttpPost(" Simpan data Siswa")]
         public void Post([FromBody] User value)
         {
             if (cekPassword(value.password))
@@ -38,7 +38,7 @@ namespace sistem_absensi.Controllers
         }
 
         // DELETE api/<ValuesController>/5
-        [HttpDelete("{id}")]
+        [HttpDelete(" Delete data Siswa")]
         public void Delete(int id)
         {
             siswaList.RemoveAt(id); 
