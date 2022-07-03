@@ -64,7 +64,8 @@ namespace Sistem_Absensi_v1
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            UserConfig uc = new UserConfig();
+            uc.WriteConfigFile(getId(),getUsername(), getPassword(), getRole(), getNama());
         }
 
         private void button2_Click_1(object sender, EventArgs e)
