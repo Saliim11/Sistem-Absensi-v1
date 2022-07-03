@@ -9,8 +9,8 @@ namespace sistem_absensi.Controllers
     public class SiswaController : ControllerBase
     {
         private static List<Siswa> siswaList = new List<Siswa>() {
-            new Siswa(DateTime.Now,"rafi", "1302204116", "11G"),
-            new Siswa(DateTime.Now,"Ucok", "1302204129", "11C")
+            new Siswa("12345", "radenrafi", "abcde123","Tim IT","Raden Rafi Alif Akbar"),
+            new Siswa("09876", "qalbunsaliim", "qwerty123","Wakil Kepala Sekolah","Muhammad Qalbun Saliim")
         };
 
         // GET: api/<SiswaController>

@@ -3,16 +3,19 @@ namespace sistem_absensi
 {
     public class Siswa
     {
-        public DateTime date { get; set; }
+        public string id { get; set; }
+        public string username { get; set; }
+        public string password { get; set; }
+        public string role { get; set; }
         public string nama { get; set; }
-        public string nim { get; set; }
-        public string kelas { get; set; }
-        public Siswa(DateTime date,string nama, string nim, string kelas)
-        { 
-            this.date = DateTime.Now;
+    
+        public Siswa(string id, string username, string password, string role, string nama)
+        {
+            this.id = id;
+            this.username = username;
+            this.password = password;
+            this.role = role;
             this.nama = nama;
-            this.nim = nim;
-            this.kelas = kelas; 
         }
     }
 }
