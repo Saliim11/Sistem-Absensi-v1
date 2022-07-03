@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -19,10 +20,12 @@ namespace Sistem_Absensi_v1
             try
             {
                 ReadConfigFile();
+                
             }
             catch (Exception e)
             {
                 //throw;
+                WriteConfigFile();
                 Console.WriteLine("File tidak ditemukan! \n" + e);
             }
         }
@@ -32,6 +35,17 @@ namespace Sistem_Absensi_v1
             string jsonStringFromFile = File.ReadAllText(path + "/" + fileConfig);
             uConf = JsonConvert.DeserializeObject<User>(jsonStringFromFile);
             return uConf;
+        }
+
+        private void WriteConfigFile()
+        {
+
+            string json = File.ReadAllText(path + "/" + fileConfig);
+            dynamic jsonObj = Newtonsoft.Json.JsonConvert.DeserializeObject(json);
+            Register reg = new Register();
+            jsonObj["user"].Add();
+            string output = Newtonsoft.Json.JsonConvert.SerializeObject(jsonObj, Newtonsoft.Json.Formatting.Indented);
+            File.WriteAllText("users.json", output);
         }
 
     }
