@@ -9,7 +9,7 @@ using Newtonsoft.Json;
 
 namespace Sistem_Absensi_v1
 {
-    internal class User
+    public class User
     {
         public List<users> user { get; set; }
 
@@ -22,7 +22,7 @@ namespace Sistem_Absensi_v1
 
     }
 
-    class users
+    public class users
     {
         public string id { get; set; }
         public string username { get; set; }

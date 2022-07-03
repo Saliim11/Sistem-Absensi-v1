@@ -5,6 +5,8 @@ VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sistem Absensi v1", "Sistem Absensi v1\Sistem Absensi v1.csproj", "{CE27022A-3CF3-4CCB-9615-64CF024FEE91}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestPanji", "TestPanji\TestPanji.csproj", "{A14E9734-1BC0-4C61-8B68-374FDDAD0CED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{CE27022A-3CF3-4CCB-9615-64CF024FEE91}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE27022A-3CF3-4CCB-9615-64CF024FEE91}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE27022A-3CF3-4CCB-9615-64CF024FEE91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A14E9734-1BC0-4C61-8B68-374FDDAD0CED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A14E9734-1BC0-4C61-8B68-374FDDAD0CED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A14E9734-1BC0-4C61-8B68-374FDDAD0CED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A14E9734-1BC0-4C61-8B68-374FDDAD0CED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
