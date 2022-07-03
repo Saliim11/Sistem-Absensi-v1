@@ -12,7 +12,7 @@ namespace Sistem_Absensi_v1
 
         public enum Trigger {Login, Logout}
 
-        public static State currentState = State.Keluar;
+        public State currentState = State.Keluar;
 
         public class Transition
         {
@@ -27,13 +27,13 @@ namespace Sistem_Absensi_v1
             }
         }
 
-        static Transition[] Posisi =
+        Transition[] Posisi =
         {
             new Transition(State.Keluar, State.Masuk, Trigger.Login),
             new Transition(State.Masuk, State.Keluar, Trigger.Logout)
         };
 
-        public static State GetNextState(State prev, Trigger trigger)
+        public State GetNextState(State prev, Trigger trigger)
         {
             State currentState = prev;
             for (int i = 0; i < Posisi.Length; i++)
@@ -46,7 +46,7 @@ namespace Sistem_Absensi_v1
             return currentState;
         }
 
-        public static void ActiveTrigger(Trigger trigger)
+        public void ActiveTrigger(Trigger trigger)
         {
             State nextState = GetNextState(currentState, trigger);
             currentState = nextState;
