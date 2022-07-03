@@ -26,5 +26,11 @@ namespace Sistem_Absensi_v1
                 this.trigger = trigger;
             }
         }
+
+        static Transition[] Posisi =
+        {
+            new Transition(State.Keluar, State.Masuk, Trigger.Login),
+            new Transition(State.Masuk, State.Keluar, Trigger.Logout)
+        };
     }
 }
